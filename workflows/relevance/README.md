@@ -1,0 +1,1 @@
+Place the Relevance AI orchestrator export JSON for this project in this directory.  The export should implement the batch‑and‑average protocol as described in `docs/ARCHITECTURE.md`.
