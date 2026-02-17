@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Stock Assessments</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg-decor bg-decor-a"></div>
+    <div class="bg-decor bg-decor-b"></div>
+    <main class="app-shell">
+      <header class="hero reveal">
+        <p class="hero-kicker">AI STOCK RANKS</p>
+        <h1>Assessment Board</h1>
+        <p class="hero-sub">
+          Upload run output and review ranking quality, stability, and exclusions.
+        </p>
+      </header>
+
+      <section class="panel controls reveal">
+        <div class="file-row">
+          <label class="file-btn" for="fileInput">Choose aggregate.json / aggregate.csv</label>
+          <input id="fileInput" type="file" accept=".json,.csv,application/json,text/csv" />
+          <button id="loadDemoBtn" class="ghost-btn" type="button">Load Demo</button>
+        </div>
+        <p class="hint">
+          Tip: run output usually lives at
+          <code>outputs/runs/&lt;timestamp&gt;/aggregate.json</code>.
+        </p>
+      </section>
+
+      <section class="kpi-grid reveal" id="kpiGrid">
+        <article class="kpi-card">
+          <p class="kpi-label">Universe</p>
+          <p class="kpi-value" id="kpiUniverse">0</p>
+        </article>
+        <article class="kpi-card">
+          <p class="kpi-label">Included</p>
+          <p class="kpi-value" id="kpiIncluded">0</p>
+        </article>
+        <article class="kpi-card">
+          <p class="kpi-label">Excluded</p>
+          <p class="kpi-value" id="kpiExcluded">0</p>
+        </article>
+        <article class="kpi-card">
+          <p class="kpi-label">Mean Top20 Rate</p>
+          <p class="kpi-value" id="kpiTop20">0%</p>
+        </article>
+        <article class="kpi-card">
+          <p class="kpi-label">Median Std Rank</p>
+          <p class="kpi-value" id="kpiStd">0</p>
+        </article>
+      </section>
+
+      <section class="layout-grid">
+        <article class="panel filters reveal">
+          <h2>Filters</h2>
+          <div class="field">
+            <label for="searchInput">Ticker search</label>
+            <input id="searchInput" type="text" placeholder="AAPL" />
+          </div>
+          <div class="field">
+            <label for="minTop20Input">Minimum Top20 Rate</label>
+            <input id="minTop20Input" type="range" min="0" max="1" step="0.05" value="0" />
+            <div class="range-value" id="minTop20Value">0.00</div>
+          </div>
+          <div class="field">
+            <label for="maxStdInput">Maximum Std Rank</label>
+            <input id="maxStdInput" type="range" min="0" max="10" step="0.1" value="10" />
+            <div class="range-value" id="maxStdValue">10.0</div>
+          </div>
+          <div class="field check-row">
+            <input id="showExcludedInput" type="checkbox" checked />
+            <label for="showExcludedInput">Show excluded tickers</label>
+          </div>
+        </article>
+
+        <article class="panel chart reveal">
+          <h2>Stability Map</h2>
+          <p class="hint">
+            Lower and left is generally better (low mean rank, low variance).
+          </p>
+          <svg id="scatterSvg" viewBox="0 0 640 360" preserveAspectRatio="none"></svg>
+        </article>
+      </section>
+
+      <section class="layout-grid">
+        <article class="panel insight reveal">
+          <h2>Top Conviction</h2>
+          <ul id="topList" class="list"></ul>
+        </article>
+        <article class="panel insight reveal">
+          <h2>Caution List</h2>
+          <ul id="cautionList" class="list"></ul>
+        </article>
+      </section>
+
+      <section class="panel table-panel reveal">
+        <div class="table-head">
+          <h2>Ranked Assessments</h2>
+          <span id="rowCountLabel">0 rows</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Ticker</th>
+                <th>Mean Rank</th>
+                <th>Std Rank</th>
+                <th>Top20 Rate</th>
+                <th>Status</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>

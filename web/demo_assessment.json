@@ -1,0 +1,98 @@
+[
+  {
+    "ticker": "MSFT",
+    "mean_rank": 1.4,
+    "std_rank": 0.7,
+    "top20_rate": 1.0,
+    "notes": "Strong cash generation and durable growth mix.",
+    "exclusion_reason": ""
+  },
+  {
+    "ticker": "NVDA",
+    "mean_rank": 1.8,
+    "std_rank": 0.9,
+    "top20_rate": 1.0,
+    "notes": "Momentum and growth leadership remain exceptional.",
+    "exclusion_reason": ""
+  },
+  {
+    "ticker": "AAPL",
+    "mean_rank": 2.6,
+    "std_rank": 1.1,
+    "top20_rate": 0.83,
+    "notes": "Premium quality profile with moderate growth.",
+    "exclusion_reason": ""
+  },
+  {
+    "ticker": "META",
+    "mean_rank": 3.1,
+    "std_rank": 1.4,
+    "top20_rate": 0.83,
+    "notes": "High margins and resilient ad demand support rank.",
+    "exclusion_reason": ""
+  },
+  {
+    "ticker": "AMZN",
+    "mean_rank": 3.9,
+    "std_rank": 1.7,
+    "top20_rate": 0.67,
+    "notes": "Operating leverage improving but valuation sensitivity remains.",
+    "exclusion_reason": ""
+  },
+  {
+    "ticker": "GOOGL",
+    "mean_rank": 4.2,
+    "std_rank": 1.5,
+    "top20_rate": 0.67,
+    "notes": "Solid cash flow and reasonable multiples.",
+    "exclusion_reason": ""
+  },
+  {
+    "ticker": "JPM",
+    "mean_rank": 5.1,
+    "std_rank": 2.1,
+    "top20_rate": 0.5,
+    "notes": "Stable fundamentals but cyclical credit risk monitored.",
+    "exclusion_reason": ""
+  },
+  {
+    "ticker": "XOM",
+    "mean_rank": 6.0,
+    "std_rank": 2.8,
+    "top20_rate": 0.5,
+    "notes": "Commodity exposure drives wider rank dispersion.",
+    "exclusion_reason": ""
+  },
+  {
+    "ticker": "TSLA",
+    "mean_rank": 7.3,
+    "std_rank": 3.2,
+    "top20_rate": 0.33,
+    "notes": "RED FLAG: Margin compression and elevated volatility.",
+    "exclusion_reason": "low_top20_rate"
+  },
+  {
+    "ticker": "PFE",
+    "mean_rank": 8.4,
+    "std_rank": 2.9,
+    "top20_rate": 0.17,
+    "notes": "RED FLAG: Weak near-term growth profile.",
+    "exclusion_reason": "low_top20_rate"
+  },
+  {
+    "ticker": "BA",
+    "mean_rank": 8.9,
+    "std_rank": 3.5,
+    "top20_rate": 0.17,
+    "notes": "RED FLAG: Execution and balance-sheet overhang.",
+    "exclusion_reason": "low_top20_rate"
+  },
+  {
+    "ticker": "INTC",
+    "mean_rank": 9.4,
+    "std_rank": 3.7,
+    "top20_rate": 0.0,
+    "notes": "RED FLAG: Profitability and competitive pressures.",
+    "exclusion_reason": "low_top20_rate"
+  }
+]
